@@ -1,0 +1,8 @@
+1. When I tried to run the dbt to seed the (RAW Schema) i got the error and this error says "Database Error could not translate host name "postgres" to address: Name or service not known".
+
+Solve:
+Because I didn't run the dbt service as will I just compose the postgres service only and when I run the dbt to seed the database I got an error because my local machine and the postgres container are not in the same network
+and what i did is I compose up the dbt image to be in the same network and i run the dbt to seed through the docker because they are in the same network.
+
+Commands related:
+docker compose run --rm dbt seed --profiles-dir .
